@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+   <div class="text-center mt-10">
+       <h1 id="title" class="text-4xl font-semibold">freeCodeCamp Survey Form</h1>
+       <p id="description" class="text-2xl italic">Thank you for taking the time to help us improve the platform</p>
+   </div>
+  <form id="survey-form">
+      <label for="name" id="name-label" >Name</label>
+      <input id="name" type="text" name="name" placeholder="Enter your name" required>
+      <br>
+
+      <label for="email" id="name-email" >Email</label>
+      <input id="email" type="email" name="email" placeholder="Enter your Email" required>
+      <br>
+
+      <label for="number" id="number-label">Age (optional)</label>
+      <input id="number" type="number" name="number" placeholder="Age" min="10" max="50" required>
+      <br>
+
+      <label for="dropdown" id="">Which option best describes your current role?</label>
+      <select id="dropdown">
+          <option value="Select current role">Select current role</option>
+          <option value="Student">Student</option>
+          <option value="Full Time Job">Full Time Job</option>
+          <option value="Full Time Learner">Full Time Learner</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+          <option value="Other">Other</option>
+      </select>
+      <br> 
+      <br>
+      <label for="which">Would you recommend freeCodeCamp to a friend?</label>
+      <input id="which" type="radio" >
+  </form>
+</body>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>
