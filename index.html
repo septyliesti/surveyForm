@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,123 +8,115 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
-   <div class="text-center mt-10">
-       <h1 id="title" class="text-4xl font-semibold">freeCodeCamp Survey Form</h1>
-       <p id="description" class="text-2xl italic">Thank you for taking the time to help us improve the platform</p>
-   </div>
 
-    <form id="survey-form">
-        <div class="form-group">
-            <label for="name" id="name-label" >Name</label>
-            <input type="text" id="name"  name="name" required placeholder="Enter your name" >
+<body class="bg-indigo-500">
+    <img src="">
+    <!-- Header -->
+    <div class="header text-center mt-12 text-white">
+        <h1 id="title" class="text-3xl font-semibold">freeCodeCamp Survey Form</h1>
+        <p id="description" class="italic py-4 text-xl">Thank you for taking the time to help us improve the platform</p>
+    </div>
+    <!-- end header -->
+
+    <!-- Form -->
+    <form id="survey-form" class="text-left text-xl mt-4 pb-16 bg-black/50 mx-80 rounded-md text-white font-semibold">
+        <!-- name -->
+        <div id="form-name" class="pt-12 mx-14 space-y-2">
+            <label id="name-label">Nama</label>
+            <input type="text" name="name" id="name" class="form-control w-full rounded-md py-1.5 px-2 text-black" placeholder="Enter your name" required />
         </div>
 
-        <div class="form-group">
-            <label for="email" id="email-label" >Email</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your Email">
+        <!-- email -->
+        <div id="form-email" class="mt-6 mx-14 space-y-2">
+            <label id="email-label">Email</label>
+            <input type="email" name="email" id="email" class="form-control w-full rounded-md py-1.5 px-2 text-black" placeholder="Enter your email" required />
         </div>
 
-        <div class="form-group">
-            <label for="number" id="number-label">Age (optional)</label>
-            <input type="number" id="number" name="number" required placeholder="Age" min="10" max="50">
+        <!-- age -->
+        <div class="mt-6 mx-14 space-y-2">
+            <label id="number-label" for="number">Age <span class="clue">(optional)</span></label>
+            <input type="number" name="age" id="number" min="10" max="99" class="form-control w-full rounded-md py-1.5 px-2 text-black" placeholder="Age" />
         </div>
 
-        <div class="form-group">
-            <label for="dropdown">Which option best describes your current role?</label>
-            <select id="dropdown">
-            <option value="Select current role">Select current role</option>
-            <option value="Student">Student</option>
-            <option value="Full Time Job">Full Time Job</option>
-            <option value="Full Time Learner">Full Time Learner</option>
-            <option value="Prefer not to say">Prefer not to say</option>
-            <option value="Other">Other</option>
+        <!-- dropdown -->
+        <div class="mt-6 mx-14 space-y-2">
+            <p>Which option best describes your current role?</p>
+            <select id="dropdown" name="role" class="form-control w-full rounded-md py-1.5 px-2 text-slate-500" required>
+            <option disabled selected value>Select current role</option>
+            <option value="student">Student</option>
+            <option value="job">Full Time Job</option>
+            <option value="learner">Full Time Learner</option>
+            <option value="preferNo">Prefer not to say</option>
+            <option value="other">Other</option>
             </select>
         </div>
-        
-        <div class="form-group">
+
+        <!-- Radio Button -->
+        <div class="mt-6 mx-14 px0">
             <p>Would you recommend freeCodeCamp to a friend?</p>
             <label>
-                <input type="radio" name="recommend" id="definitely" value="definitely">
-                Definitely
-            </label> <br>
+            <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked/> Definitely</label>
+            <br>
             <label>
-                <input type="radio" name="recommend" id="maybe" value="maybe"> 
-                Maybe
-            </label> <br>
+            <input name="user-recommend" value="maybe" type="radio" class="input-radio"/> Maybe</label>
+            <br>
             <label>
-                <input type="radio" name="recommend" id="not-sure" value="not-sure">
-                Not Sure
-            </label> <br>
+            <input name="user-recommend" value="not-sure" type="radio" class="input-radio"/> Not sure</label>
         </div>
 
-        <div class="form-group">
-            <label for="feature">What is your favorite feature of freeCodeCamp?</label>
-            <select id="dropdown">
-            <option value="Select an option">Select an option</option>
-            <option value="Challenges">Challenges</option>
-            <option value="Projects">Projects</option>
-            <option value="Community">Community</option>
-            <option value="Open Source">Open Source</option>
+        <!-- Dropdown -->
+        <div class="mx-14 mt-6 space-y-2">
+            <p>What is your favorite feature of freeCodeCamp?</p>
+            <select id="most-like" name="mostLike" class="form-control w-full rounded-md py-1.5 px-2 text-slate-500" required>
+                <option disabled selected value>Select an option</option>
+                <option value="challenges">Challenges</option>
+                <option value="projects">Projects</option>
+                <option value="community">Community</option>
+                <option value="openSource">Open Source</option>
             </select>
         </div>
 
-         
-        <div class="form-group">
-            <p>What would you like to see improved?</p>
+        <!-- Checkbox -->
+        <div class="mx-14 mt-6">
+            <p>What would you like to see improved?<span class="clue"> (Check all that apply)</span></p>
             <label>
-                <input type="checkbox" name="improved" id="front-end" value="front-end">
-                Front-end Projects
-            </label> <br>
+            <input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox"/> Front-end Projects</label><br>
             <label>
-                <input type="checkbox" name="improved" id="back-end" value="back-end"> 
-                Back-end Projects
-            </label> <br>
+            <input name="prefer" value="back-end-projects"type="checkbox" class="input-checkbox" /> Back-end Projects</label><br>
             <label>
-                <input type="checkbox" name="improved" id="data" value="data">
-                Data Visualization
-            </label> <br>
+            <input name="prefer" value="data-visualization" type="checkbox" class="input-checkbox" /> Data Visualization</label><br>
             <label>
-                <input type="checkbox" name="improved" id="challenges" value="challenges">
-                Challenges
-            </label> <br>
+            <input name="prefer" value="challenges" type="checkbox" class="input-checkbox" /> Challenges</label><br>
             <label>
-                <input type="checkbox" name="improved" id="open" value="open">
-                Open Source 
-            </label> <br>
+            <input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox" /> Open Source Community</label><br>
             <label>
-                <input type="checkbox" name="improved" id="gitter" value="gitter">  
-                Gitter Source Community 
-            </label> <br>
+            <input name="prefer" value="gitter-help-rooms" type="checkbox" class="input-checkbox" /> Gitter help rooms</label><br>
             <label>
-                <input type="checkbox" name="improved" id="videos" value="videos">  
-                Videos
-            </label> <br>
+            <input name="prefer" value="videos" type="checkbox" class="input-checkbox" /> Videos</label><br>
             <label>
-                <input type="checkbox" name="improved" id="city" value="city">
-                City  
-            </label> <br>
+            <input name="prefer" value="city-meetups" type="checkbox" class="input-checkbox" /> City Meetups</label><br>
             <label>
-                <input type="checkbox" name="improved" id="wiki" value="wiki">
-                Wiki  
-            </label> <br>
+            <input name="prefer" value="wiki" type="checkbox" class="input-checkbox" /> Wiki</label><br>
             <label>
-                <input type="checkbox" name="improved" id="forum" value="forum">
-                Forum  
-            </label> <br>
+            <input name="prefer" value="forum" type="checkbox" class="input-checkbox" /> Forum</label><br>
             <label>
-                <input type="checkbox" name="improved" id="additional" value="additional">
-                Additional Courses  
-            </label> <br>
+            <input name="prefer"value="additional-courses" type="checkbox" class="input-checkbox" /> Additional Courses</label><br>
         </div>
 
-        <div class="form-group">
-            <label for="comment">Any comments or suggestion?</label> <br>
-            <textarea name="comment" id="comment" placeholder="Enter your comment here..."></textarea> <br>
+        <!-- text area -->
+        <div class="mt-6 mx-14 space-y-2">
+            <p>Any comments or suggestions?</p>
+            <textarea id="comments" class="input-textarea form-control w-full py-1.5 px-2 pb-10 text-black" name="comment" placeholder="Enter your comment here..."></textarea>
+        </div>
 
-            <button type="submit" id="submit" value="submit">Submit</button>
+        <!-- submit -->
+        <div class="text-center mx-14 mt-6 md-16">
+            <button type="submit" id="submit" class="submit-button bg-green-500 rounded-sm w-full py-2">Submit</button>
         </div>
     </form>
+    <!-- end form -->
+
 </body>
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
 </html>
